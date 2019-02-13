@@ -1,0 +1,88 @@
+.tabs {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-size: 12px;
+    @include medium;
+    letter-spacing: 1px;
+    line-height: 20px;
+    padding-bottom: 8px;
+    color: $secondary-text-color;
+    border-bottom: 4px solid #ffffff;
+    text-transform: uppercase;
+    position: relative;
+
+    &:hover {
+      color: $primary-text-color;
+    }
+  }
+
+  .active {
+    border-bottom: 4px solid $primary-color;
+    color: $primary-text-color;
+  }
+
+  &--cars {
+    .tabs__link {
+      
+      color: $primary-text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .tabs__item {
+      &:not(:first-child) {
+        .tabs__link {
+          padding-left: 12px;
+          &:before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            margin-top: -8px;
+          }
+        }
+      }
+
+      .renault-bgo {
+        &:before {
+          background-color: #FFB010;
+        }
+      }
+
+      .nissan-bgr {
+        &:before {
+          background-color: #E51E51;
+        }
+      }
+
+      .infiniti-bgf {
+        &:before {
+          background-color: #8042B6;
+        }
+      }
+
+      .datsun-bgb {
+        &:before {
+          background-color: #4678DA;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.main-slider {
+  animation: fadeIn 1.8s;
+
+  &__inner {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    background-size: cover no-repeat;
+    background-position: center;
+    @include tablet-and-phone {
+      background-position: right top;
+    }
+  }
+
+  &__title {
+    padding: 5px 70px;
+    @include light;
+    font-size: 48px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    margin-bottom: 40px;
+    letter-spacing: 9px;
+    @include mobile {
+      position: relative;
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @include light;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #363736;
+    letter-spacing: 9px;
+    @include mobile {
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+
+  .slick {
+    &-prev {
+      position: absolute;
+      font-size: 0;
+      height: 46px;
+      margin-top: -23px;
+      top: 50%;
+      left: 110px;
+      z-index: 9999;
+      @include tablet-and-phone {
+        top: 45%;
+        left: 10px;
+      }
+
+      &:before {
+        content: '';
+        visibility: visible;
+        @include sprite("slider-prev");
+      }
+
+      &:hover:before {
+        @include sprite("slider-prev-hover");
+        transform: rotate(180deg);
+        @include tablet-and-phone {
+          @include sprite("slider-prev");
+          transform: rotate(0);
+        }
+      }
+    }
+
+    &-next {
+      position: absolute;
+      font-size: 0;
+      height: 46px;
+      margin-top: -23px;
+      top: 50%;
+      right: 110px;
+      z-index: 9999;
+      @include tablet-and-phone {
+        top: 45%;
+        right: 10px;
+      }
+
+      &:before {
+        content: '';
+        visibility: visible;
+        @include sprite("slider-prev");
+        transform: rotate(180deg);
+      }
+
+      &:hover:before {
+        @include sprite("slider-prev-hover");
+        transform: rotate(0);
+        @include tablet-and-phone {
+          @include sprite("slider-prev");
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-dots {
+      position: absolute;
+      bottom: 55px;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tablet-and-phone {
+        bottom: 20px;
+      }
+
+      li {
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        button {
+          position: relative;
+          font-size: 0;
+          line-height: 0;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: white;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            margin-left: -2px;
+            margin-top: -2px;
+          }
+        }
+      }
+
+      .slick {
+        &-active {
+          button {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}

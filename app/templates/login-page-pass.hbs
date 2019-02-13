@@ -1,0 +1,31 @@
+{{!Восстановление пароля}}
+{{> layout/head }}
+<div class="login-page pass">
+  <div class="container-fluid">
+    <div class="login-page__inner">
+      <div class="login-page__logo">
+        <img src="/content/images/login-page-logo.svg" alt="">
+
+      </div>
+
+      <div class="login-page__bg">
+      </div>
+      <div class="login-page__form">
+        <form class="register-form">
+          <div class="register-form__title">Восстановление пароля</div>
+          <p class="register-form__info">Введите e-mail, на который зарегистрирован ваш аккаунт, и вам будет отправлено сообщение с указаниями для восстановления пароля.</p>
+          {{> ui/input label='Адрес электронной почты' placeholder='' }}
+    
+          <div class="register-form__active">
+            <a href="#" class="link">Вернутся к авторизации</a>
+            <button class="btn btn-primary">Отправить</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{> layout/bottom }}

@@ -1,0 +1,147 @@
+.about {
+  background-color: #fafafa;
+  animation: fadeIn 1.8s;
+  transition: 0.3s;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    @include light;
+    line-height: 30px;
+    letter-spacing: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    @include tablet-and-phone {
+      font-size: 22px;
+      line-height: 22px;
+      padding-bottom: 15px;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    @include regular;
+    color: #979797;
+    letter-spacing: 3px;
+    margin-bottom: 75px;
+    max-width: 100%;
+    @include tablet-and-phone {
+      margin-bottom: 30px;
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+    max-width: 100%;
+
+    .slick {
+      &-arrow {
+        font-size: 0;
+      }
+
+      &-dots {
+        position: absolute;
+        bottom: 15px;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          margin-right: 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        button {
+          position: relative;
+          font-size: 0;
+          line-height: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: rgba(241, 226, 226, 0.979);
+        }
+      }
+
+      &-active {
+        button {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  &__col {
+    max-width: 33.333333%;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .col {
+      &-desc {
+        padding: 35px;
+        background: white;
+        @include tablet-and-phone {
+          padding-top: 25px;
+          font-size: 18px;
+          line-height: 18px;
+          @include mobile {
+            position: relative;
+            margin-bottom: 30px;
+          }
+        }
+
+        &__title {
+          font-size: 20px;
+          line-height: 20px;
+          text-transform: uppercase;
+          @include light;
+          margin-bottom: 10px;
+        }
+
+        &__info {
+          font-size: 14px;
+          line-height: 14px;
+          @include regular;
+          color: #979797;
+          letter-spacing: 3px;
+          @include tablet-and-phone {
+            font-size: 12px;
+            line-height: 12px;
+          }
+        }
+      }
+
+      &__img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

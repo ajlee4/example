@@ -1,0 +1,37 @@
+{{!Смена пароля}}
+{{> layout/head }}
+<div class="login-page pass pass-replace">
+  <div class="container-fluid">
+    <div class="login-page__inner">
+      <div class="login-page__logo">
+        <img src="/content/images/login-page-logo.svg" alt="">
+
+      </div>
+
+      <div class="login-page__bg">
+      </div>
+      <div class="login-page__form">
+        <form class="register-form">
+          <div class="register-form__title">Смена пароля</div>
+          <p class="register-form__info">Минимальная длина пароля — 8 символов. Не используйте пароли от других сайтов или варианты, которые злоумышленники смогут легко подобрать.</p>
+           <div class="form-field  ">
+            <label for="" class="form-label ">Новый пароль</label>
+            <input type="password" class="form-input  ">
+             </div>
+              <div class="form-field  ">
+            <label for="" class="form-label ">Повторите новый пароль</label>
+            <input type="password" class="form-input  ">
+             </div>
+    
+          <div class="register-form__active">
+            <button class="btn btn-primary">Отправить</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{> layout/bottom }}

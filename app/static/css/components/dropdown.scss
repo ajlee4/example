@@ -1,0 +1,135 @@
+.dropdown {
+  position: relative;
+
+  &__header {
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+
+    &--placeholder {
+      .dropdown__text {
+        color: $primary-text-color;
+      }
+    }
+
+    &:hover {
+      border-color: #c0c0c0;
+    }
+
+    .opened & {
+      border-color: $primary-color;
+      border-width: 2px;
+      border-bottom-color: #e0e0e0;
+      border-bottom-width: 1px;
+      border-radius: 0;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    @include sprite("btn-arrow-d");
+    z-index: 1;
+
+    &:hover {
+      @include sprite("btn-arrow-s-o");
+    }
+
+    .opened & {
+      transform: translateY(-50%) rotate(180deg);
+      &:hover {
+        @include sprite("btn-arrow-d");
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    height: 100%;
+    padding: 17px 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .opened & {
+      padding: 16px 19px;
+    }
+  }
+
+  &__box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    max-height: 300px;
+    overflow: auto;
+    z-index: 1;
+
+    span {
+      &:first-child {
+        a {
+          border-top: 0;
+          border-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        a {
+          border-bottom: 1px solid #e0e0e0;
+        }
+      }
+
+      a {
+        border-right: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+      }
+    }
+
+    div {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+
+      a {
+        display: block;
+        color: $primary-text-color;
+        text-transform: none;
+        font-size: 14px;
+        padding: 17px 20px;
+        border-top: 1px solid #e0e0e0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:hover {
+          background-color: #f3f3f3;
+        }
+      }
+    }
+
+    .opened & {
+      z-index: 10;
+
+      span {
+        &:last-child {
+          a {
+            border-bottom-width: 2px;
+          }
+        }
+
+        a {
+          border-right-width: 2px;
+          border-left-width: 2px;
+          border-color: $primary-color;
+          border-top-color: #e0e0e0;
+        }
+      }
+    }
+  }
+}

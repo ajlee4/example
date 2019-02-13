@@ -1,0 +1,140 @@
+.datepicker {
+  position: relative;
+
+  &_input {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+  &_icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    border-left: 1px solid #e0e0e0;
+    background-color: #f3f3f3;
+    z-index: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include sprite("datapicker-s-g");
+      margin-top: -9px;
+      margin-left: -9px;
+    }
+  }
+
+  &:hover .datepicker_icon {
+    border-color: #C0C0C0;
+    &:before {
+      @include sprite("datapicker-s-b");
+    }
+  }
+}
+
+.ui {
+  &-datepicker {
+    width: inherit;
+    z-index: 9999;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 20px 15px 14px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+
+    &-header {
+      position: relative;
+      margin: 0 9px;
+    }
+
+    &-prev {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+
+      &:before {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: inline-block;
+        content: "";
+        @include sprite("btn-arrow-d");
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+
+    &-next {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      visibility: hidden;
+
+      &:after {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        content: "";
+        @include sprite("btn-arrow-d");
+        transform: translateY(-50%) rotate(270deg);
+      }
+    }
+  }
+
+  &-datepicker-calendar {
+    thead {
+      @include light;
+      color: #a1a1a1;
+      font-weight: 300;
+      display: inline-block;
+
+      th {
+        display: inline-block;
+        width: 36px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid #ececec;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+
+    tbody {
+      td {
+        height: 36px;
+        width: 36px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &-datepicker-title {
+    text-align: center;
+    @include bold;
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+
+  &-state-default {
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+    display: block;
+    transition: 0.3;
+
+    &:hover {
+      color: #ffffff;
+      background-color: $primary-color;
+    }
+  }
+}

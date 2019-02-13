@@ -1,0 +1,68 @@
+.link {
+  color: $primary-color;
+  font-size: 12px;
+  border-bottom: 1px solid $primary-color;
+
+  &:hover {
+    color: $primary-text-color;
+    border-color: $primary-text-color;
+  }
+
+  &:focus {
+    border-bottom: 0;
+    opacity: 0.8;
+  }
+
+  &-icon {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+
+    span {
+      border-bottom: 1px solid $primary-color;
+    }
+
+    &:hover {
+      span {
+        transition: 0.3s;
+        color: $primary-text-color;
+        border-color: $primary-text-color;
+      }
+    }
+
+    &:focus {
+      span {
+        border-bottom: 0;
+      }
+    }
+
+    .icon-message-s-o {
+      margin-right: 4px;
+    }
+
+    .icon-arrow-bottom-s-b {
+      margin-left: 8px;
+    }
+  }
+
+  &-open {
+    font-size: 14px;
+    color: $primary-color;
+
+    &:focus {
+      color: $primary-color;
+
+      .icon-arrow-bottom-s-b {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:focus:hover {
+      span {
+        opacity: 1;
+        color: $primary-color;
+      }
+    }
+  }
+}

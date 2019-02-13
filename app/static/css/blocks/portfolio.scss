@@ -1,0 +1,247 @@
+.portfolio {
+  background-color: #fafafa;
+  animation: fadeIn 1.8s;
+  overflow: hidden;
+
+  &__inner {}
+
+  .js-dropdown-box {
+    display: none;
+  }
+
+  .dropdown {
+    display: none;
+  }
+  @include mobile {
+    .dropdown {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    .slick {
+      &-arrow {
+        font-size: 0;
+      }
+
+      &-dots {
+        position: absolute;
+        bottom: 15px;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          margin-right: 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        button {
+          position: relative;
+          font-size: 0;
+          line-height: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: rgba(241, 226, 226, 0.979);
+        }
+      }
+
+      &-active {
+        button {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  &__item {
+    padding: 15px;
+  }
+
+  &__img {
+    img {
+      max-width: 100%;
+    }
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #7b7b7b;
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    &:hover:before {
+      opacity: 0.5;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -20px;
+      margin-top: -20px;
+      content: '';
+      @include sprite("portfolio-plus");
+      z-index: 1;
+      transition: 0.3s;
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  &__col {
+    flex: 0 0 33.3333%;
+
+    &:first-child {
+      .portfolio__item {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      .portfolio__item {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .active {
+      color: black;
+      overflow: visible;
+    }
+
+    li {
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        bottom: -3px;
+      }
+
+      &:hover {
+        overflow: visible;
+
+        &:before {
+          animation: moveLeftBorder 0.2s ease-in-out;
+        }
+        color: black;
+      }
+      cursor: pointer;
+      margin-right: 45px;
+      @include tablet-and-phone {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    @include bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #777777;
+    letter-spacing: 3px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    @include mobile {
+      font-size: 8px;
+      line-height: 8px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+}
+@keyframes beforeBorders {
+  0% {
+    top: calc(var(--border-width) * -1);
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    width: 0;
+    height: var(--border-width);
+  }
+
+  33% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: var(--border-width);
+  }
+
+  66% {
+    top: calc(var(--border-width) * -1);
+    left: calc(var(--border-width) * -1);
+    bottom: auto;
+    right: auto;
+    width: var(--border-width);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+
+  100% {
+    top: auto;
+    left: calc(var(--border-width) * -1);
+    bottom: calc(var(--border-width) * -1);
+    right: auto;
+    width: calc(var(--border-width) + 50%);
+    height: calc((var(--border-width) * 2) + 100%);
+  }
+}

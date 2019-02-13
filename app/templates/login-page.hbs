@@ -1,0 +1,36 @@
+{{!Авторизация}}
+{{> layout/head }}
+<div class="login-page">
+  <div class="container-fluid">
+    <div class="login-page__inner">
+      <div class="login-page__logo">
+        <img src="/content/images/login-page-logo.svg" alt="">
+
+      </div>
+
+      <div class="login-page__bg">
+      </div>
+      <div class="login-page__form">
+        <form class="register-form">
+          <div class="register-form__title">Авторизация</div>
+          {{> ui/input label='Адрес электронной почты' placeholder='' }}
+          <div class="form-field  ">
+            <label for="" class="form-label ">Пароль</label>
+            <input type="password" class="form-input  ">
+
+
+
+             </div>
+          <div class="register-form__active">
+            <a href="" class="link">Забыли пароль?</a>
+            <button class="btn btn-primary">Войти</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{> layout/bottom }}

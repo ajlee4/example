@@ -1,0 +1,74 @@
+.check {
+  &-box {
+    position: relative;
+  }
+
+  &-input {
+    &:not(checked) {
+      display: none;
+    }
+
+    &:disabled + .check-label {
+      opacity: 0.8;
+    }
+
+    &:disabled + .check-label:hover:before {
+      border-color: #E0E0E0;
+    }
+
+    &:checked + .check-label {
+      &:hover:before {
+        border-color: $primary-color;
+      }
+
+      &:before {
+        border-color: $primary-color;
+        background-color: $primary-color;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    + .check-label {
+      position: relative;
+      padding-left: 35px;
+      line-height: 24px;
+      margin: 0;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 14px;
+
+      &:hover:before {
+        border-color: #C0C0C0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #E0E0E0;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+        left: 7px;
+        transform: translateY(-50%);
+        background: transparent;
+        @include sprite('checked');
+        opacity: 0;
+      }
+    }
+  }
+}

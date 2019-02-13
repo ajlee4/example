@@ -1,0 +1,151 @@
+.form {
+  &-field {
+    position: relative;
+  }
+
+  &-label {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 8px;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  &-input {
+    width: 100%;
+    height: 40px;
+    display: block;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+    &:hover {
+
+      
+      border-color: #c0c0c0;
+    }
+
+    &:focus {
+      border-left-width: 5px;
+      animation: moveBorder 0.5s;
+      border-color: $primary-color;
+    }
+    @include placeholder {
+      color: $secondary-text-color;
+    }
+
+    &:disabled {
+      background-color: #f3f3f3;
+
+      &:hover {
+        border-color: #e0e0e0;
+      }
+
+      &:focus {
+        border-color: #e0e0e0;
+      }
+      @include placeholder {
+        color: #a1a1a1;
+      }
+    }
+  }
+&-area {
+  @include placeholder {
+    color: $secondary-text-color;
+  }
+  width: 100%;
+    height: 150px;
+    display: block;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+
+    &:hover {
+    
+    
+      border-color: #c0c0c0;
+    }
+
+    &:focus {
+      border-left-width: 5px;
+      animation: moveBorder 0.5s;
+      border-color: $primary-color;
+    }
+}
+  &-error {
+    border: 2px solid $danger-color !important;
+
+    &:hover {
+      border-color: $danger-color !important;
+    }
+
+    &:focus {
+      border-color: $danger-color !important;
+    }
+  }
+}
+
+.error-top {
+  .tooltip-error {
+    margin-top: 0;
+    top: 0;
+    right: 0;
+  }
+}
+
+.tooltip-error {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  background-color: red;
+  width: 14px;
+  height: 14px;
+  @include sprite("error-s");
+  cursor: pointer;
+  z-index: 9999;
+
+  &:hover {
+    .tooltip-error__inner {
+      display: block;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    top: 100%;
+    margin-top: 5px;
+    left: 50%;
+    margin-left: -85px;
+    display: none;
+    width: 170px;
+    padding: 16px;
+    background-color: #e0283e;
+    color: #ffffff;
+    border-radius: 4px;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+@keyframes  moveBorder {
+  from {
+     border-left-width: 0%;
+  }
+  25% {
+    border-left-width: 25%;
+  }
+  50% {
+    border-left-width: 50%;
+  }
+  75% {
+    border-left-width: 75%;
+  }
+  100% {
+    border-left-width: 100%;
+  }
+}

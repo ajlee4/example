@@ -1,0 +1,103 @@
+.login-page {
+  background-color: #F5F5F5;
+  overflow: hidden;
+
+  &__inner {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 19px 19px 45px;
+  }
+
+  &__logo {
+    margin-top: 37px;
+    min-width: 330px;
+  }
+
+  &__bg {
+    background-image: url($images_dir + 'login-page-bg.jpg'); 
+    border-radius: 4px;
+    width: 100%;
+    background-size: cover;
+
+  
+  }
+
+  &__form {
+    position: absolute;
+    top: 160px;
+    left: 45px;
+    z-index: 2;
+    width: 431px;
+    height: 436px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 4px;
+
+    .register-form {
+      .form {
+        &-field {
+          margin-bottom: 32px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &-label {
+          margin-bottom: 16px;
+        }
+      }
+
+      .link {
+        border-bottom: 0;
+      }
+
+      &__title {
+        font-size: 30px;
+        color: $primary-text-color;
+        @include medium;
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      &__active {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+.pass {
+  .register-form {
+    &__title {
+      text-align: start;
+      margin-bottom: 32px;
+    }
+    &__info {
+      margin-bottom: 32px;
+    }
+  }
+  .login-page {
+    &__form {
+      width: 431px;
+      height: 397px;
+    }
+  }
+  &-replace {
+    .login-page {
+      &__form {
+        width: 431px;
+        height: 504px;
+      }
+    }
+    .register-form {
+    &__active {
+      justify-content: flex-end;
+    }
+    }
+  }
+}
