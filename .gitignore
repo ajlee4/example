@@ -4,7 +4,6 @@ package-lock.json
 .sass-cache
 .idea
 npm-debug.log
-dist/*
 logs
 .DS_Store
 .vscode
